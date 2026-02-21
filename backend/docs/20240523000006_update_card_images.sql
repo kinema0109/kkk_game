@@ -1,0 +1,33 @@
+-- Update images for Library Cards (Means) with verified URLs
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=400&auto=format&fit=crop' WHERE content = 'Arsenic';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?q=80&w=400&auto=format&fit=crop' WHERE content = 'Dagger';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1601625463687-25541fb72f61?q=80&w=400&auto=format&fit=crop' WHERE content = 'Rope';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1595079676339-1534801ad6cf?q=80&w=400&auto=format&fit=crop' WHERE content = 'Pistol';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=400&auto=format&fit=crop' WHERE content = 'Pillow';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1495556650867-99590cea3657?q=80&w=400&auto=format&fit=crop' WHERE content = 'Brick';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1444676632488-26a136c45b9b?q=80&w=400&auto=format&fit=crop' WHERE content = 'Water';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=400&auto=format&fit=crop' WHERE content = 'Chemical';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=400&auto=format&fit=crop' WHERE content = 'Electricity';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1544415847-14f5e5576391?q=80&w=400&auto=format&fit=crop' WHERE content = 'Ice';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1554188248-986adbb73be4?q=80&w=400&auto=format&fit=crop' WHERE content = 'Sculpture';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1583912267670-65da558695d8?q=80&w=400&auto=format&fit=crop' WHERE content = 'Virus';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?q=80&w=400&auto=format&fit=crop' WHERE content = 'Explosive';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1603006905521-289f3bc919af?q=80&w=400&auto=format&fit=crop' WHERE content = 'Candle';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1453904300235-0f2f60b15b5d?q=80&w=400&auto=format&fit=crop' WHERE content = 'Plant';
+
+-- Update images for Library Cards (Clues) with verified URLs
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1589578228447-e1a4e481c6c8?q=80&w=400&auto=format&fit=crop' WHERE content = 'Badge';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1510343360212-9c3167f25902?q=80&w=400&auto=format&fit=crop' WHERE content = 'Cigarette Butt';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1586495777744-4413f2171923?q=80&w=400&auto=format&fit=crop' WHERE content = 'Lipstick';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=400&auto=format&fit=crop' WHERE content = 'Watch';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1606703517228-a53d61183350?q=80&w=400&auto=format&fit=crop' WHERE content = 'Hairpin';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=400&auto=format&fit=crop' WHERE content = 'Ring';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1590424744295-814e54964687?q=80&w=400&auto=format&fit=crop' WHERE content = 'Button';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=400&auto=format&fit=crop' WHERE content = 'Receipt';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=400&auto=format&fit=crop' WHERE content = 'Key';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=400&auto=format&fit=crop' WHERE content = 'Wallet';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=400&auto=format&fit=crop' WHERE content = 'Phone';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop' WHERE content = 'Diary';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=400&auto=format&fit=crop' WHERE content = 'Prescription';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1550133730-6900d8324542?q=80&w=400&auto=format&fit=crop' WHERE content = 'Ticket';
+UPDATE library_cards SET image_url = 'https://images.unsplash.com/photo-1593121925328-369ec74f5272?q=80&w=400&auto=format&fit=crop' WHERE content = 'Glove';

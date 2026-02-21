@@ -1,0 +1,44 @@
+# Python cached files
+__pycache__/
+*.py[cod]
+*$py.class
+backend/.venv/
+backend/.uv/
+backend/src/app/core/.env
+backend/src/app/core/.env.local
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+
+# Flutter/Mobile
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+android/app/key.properties
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+
+# Agent logs and brain
+.gemini/
+.agents/brain/
+.agents/logs/
+
+# Repomix
+repomix-output.txt
