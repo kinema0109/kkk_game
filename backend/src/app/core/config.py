@@ -13,6 +13,8 @@ class Settings(BaseSettings):
     # Supabase
     SUPABASE_URL: Optional[str] = None
     SUPABASE_KEY: Optional[str] = None
+    SUPABASE_SERVICE_ROLE_KEY: Optional[str] = None
+    ADMIN_EMAIL: Optional[str] = None
     
     model_config = SettingsConfigDict(env_file=".env", case_sensitive=True)
 

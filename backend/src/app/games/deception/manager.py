@@ -10,11 +10,21 @@ class GameManager:
         self.games[room_id] = game
         return game
 
-    def get_game(self, room_id: str) -> Optional[DeceptionGame]:
-        return self.games.get(room_id)
+    async def get_game(self, room_id: str) -> Optional[DeceptionGame]:
+        # Check memory first
+        if room_id in self.games:
+            return self.games[room_id]
+        
+        # Check Redis
+        from .logic import state_manager
+        game = await state_manager.get_state(room_id, DeceptionGame)
+        if game:
+            self.games[room_id] = game
+            return game
+        return None
 
-    def handle_player_connect(self, room_id: str, player_id: str, player_name: str) -> DeceptionGame:
-        game = self.get_game(room_id)
+    async def handle_player_connect(self, room_id: str, player_id: str, player_name: str) -> DeceptionGame:
+        game = await self.get_game(room_id)
         if not game:
             game = self.create_game(room_id, room_id)
             
@@ -25,6 +35,7 @@ class GameManager:
             player = DeceptionPlayer(id=player_id, name=player_name)
             game.add_player(player)
             
+        await game.save()
         return game
 
 game_manager = GameManager()

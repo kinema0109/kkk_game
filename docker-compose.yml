@@ -1,0 +1,29 @@
+services:
+  redis:
+    image: redis:alpine
+    container_name: deception_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: always
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: deception_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+    env_file:
+      - .env
+    depends_on:
+      - redis
+    restart: always
+
+volumes:
+  redis_data:
