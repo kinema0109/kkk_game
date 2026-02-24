@@ -1,68 +1,60 @@
-# Deception: Manager Game
+# Manager Game Hub: Multi-Mission Platform 🏛️🎮
 
-A multi-platform adaptation of the "Deception: Murder in Hong Kong" board game.
+A premium, modular multi-game engine for digital board game adaptations. Host, join, and manage diverse game sessions from a single unified ecosystem.
 
-## 🚀 Quick Start - Backend (Python / FastAPI)
+## ✨ Key Features
+- **Global Operation Hub**: A worldwide map UI for tracking investigator movement and eldritch activities.
+- **Ancient One Management**: Dedicated state tracking for Azathoth, Cthulhu, and others.
+- **Dynamic Encounter Engine**: System for handling Research, Expedition, and Other World encounters.
+- **Mystery Resolver**: Logic for tracking and solving the 3 mysteries required for victory.
+- **Arkham-Grade UI**: Premium thematic design with Lovecraftian aesthetics and dynamic omen tracking.
 
-The backend uses Redis for real-time state and Supabase for persistence.
+---
 
-### Option A: Using Docker (Recommended)
-This runs both the API and Redis in isolated containers.
-```bash
-# Start everything
-docker-compose up -d --build
+## 🛠 Tech Stack
+-   **Frontend**: Flutter (Dart) + `flutter_animate` + `supabase_flutter`.
+-   **Backend**: FastAPI (Python) + `pydantic` + `structlog`.
+-   **Infrastructure**: Redis (Real-time state) + Supabase (Persistence & Auth).
 
-# View logs
-docker-compose logs -f backend
+---
 
-# Stop
-docker-compose down
-```
+## 🚀 Quick Start - Backend
+The backend manages real-time state transitions and data persistence.
 
-### Option B: Local Development
-Ensure you have Redis running locally first.
+### Option A: Local Development
+Ensure you have Redis and UV installed.
 ```bash
 cd backend
-# Run using the full path to UV if it's not in your PATH
-& uv sync
-& uv run uvicorn src.app.main:app --reload
+uv sync
+uv run uvicorn src.app.main:app --reload
+```
+
+### Option B: Docker (Recommended)
+```bash
+docker-compose up -d --build
 ```
 
 ---
 
-## 📱 Quick Start - Frontend (Flutter)
-
-Navigate to the `frontend` directory.
+## 📱 Quick Start - Frontend
 ```bash
 cd frontend
 flutter pub get
 flutter run
 ```
-*Note: Ensure the backend URL in `lib/providers/game_provider.dart` matches your environment.*
 
 ---
 
-## ☁️ Deployment on Render (Docker)
-
-To deploy the Backend on Render using Docker while ensuring it only updates when the backend code changes:
-
-1.  **Create a New Web Service** on Render.
-2.  **Connect your GitHub Repository**.
-3.  **Configure the following settings (as seen in your screenshot):**
-    *   **Runtime**: `Docker`
-    *   **Root Directory**: `backend`
-        > [!IMPORTANT]
-        > Setting this to `backend` ensures that Render **only** triggers a new deployment when files inside the `backend/` folder are changed. Changes to the `frontend/` folder will be ignored by Render.
-    *   **Dockerfile Path**: `Dockerfile` (Render will look for `backend/Dockerfile`).
-4.  **Environment Variables**:
-    *   Add your `.env` variables (REDIS_HOST, SUPABASE_URL, etc.) in the **Environment** tab on Render.
+## 🌑 Vibe Coding & AI Efficiency
+This project is optimized for "Vibe Coding" (intent-based development). To save tokens and improve AI throughput:
+- **Compressed Context**: Refer the AI to [.vibe_coding_guide.md](.vibe_coding_guide.md) at the start of any task.
+- **Signal Points**: Focus AI attention on `logic.py` (state) and `game_provider.dart` (connection) to avoid full-code scans.
 
 ---
 
-## 🔑 Admin Setup
-To assign the admin role to your email:
-1. Update `ADMIN_EMAIL` and `SUPABASE_SERVICE_ROLE_KEY` in `.env`.
-2. Run the migration script:
+## 🔑 Deployment & Admin
+- **Render**: Deploy using the `backend` root directory to trigger builds only on backend changes.
+- **Admin**: Use the `migrate_admin.py` script to escalate operative privileges.
 ```bash
 docker-compose exec backend uv run src/app/scripts/migrate_admin.py
 ```

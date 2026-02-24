@@ -1,23 +1,24 @@
-# Project Blueprint
+# Project Blueprint: Manager Game Hub 🏛️🎮
 
-## Project Name: Manager Game
-A web-based adaptation of "Deception: Murder in Hong Kong", evolved into a multi-game engine.
+## Project Name: Manager Game Engine
+A modular multi-game platform designed to host various digital board game adaptations.
 
-## Tech Stack (Updated)
-- **Backend**: Python (FastAPI) with WebSockets.
-- **State Management**: Redis (Hybrid state: active games in Redis, permanent records in Supabase).
-- **Database/Auth**: Supabase / PostgreSQL.
-- **Dependency Management**: `uv`.
-- **Infrastructure**: Docker / Render (CI/CD via GitHub Actions).
+### Supported Games (Alpha Phase)
+1. **Deception: Murder in Hong Kong** (Noir Espionage)
+2. **Eldritch Horror** (Global Lovecraftian Strategy)
+
+## Tech Stack
+- **Backend**: Python (FastAPI) + WebSockets.
+- **State Management**: Redis (Active game state) + Supabase (Persistence).
+- **Frontend**: Flutter (Mobile/Web) + `flutter_animate`.
 
 ## Architectural Patterns
-- **Multi-game Core**: Generic `BaseRoom` and `BasePlayer` classes for different game modules.
-- **Deception Module**: Ported from an existing Next.js backend (`/myproject/deception`).
-- **WebSocket Core**: Bidirectional communication for heavy realtime game events.
-- **Type Safety**: Pydantic v2 and mandatory type hints.
+- **Turn-Based Phases**: Strict enforcement of Action, Encounter, and Mythos phases.
+- **Global Map Engine**: Coordinate-based movement and location-specific encounter triggers.
+- **Card-Driven Logic**: Dynamic deck management (Mythos, Research, Expedition, Mystery).
+- **Stat-Check System**: Automated die rolling and modifier calculations for investigator stats.
 
 ## Guidelines for AI
-- Always follow the existing project structure.
-- Use enums instead of string literals.
-- Ensure all API calls/WebSocket events are compatible with the Supabase schema.
-- Porting logic from Next.js (TypeScript) to FastAPI (Python) must preserve game rules.
+- Use the `project-eldritch-core` skill for all tasks.
+- Prioritize `eldritch_horror/logic.py` as the source of truth for game rules.
+- Maintain "forbidden archive" aesthetics (sepia tones, parchment textures).

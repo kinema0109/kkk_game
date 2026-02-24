@@ -5,6 +5,7 @@ enum GameStatus {
   SETUP,
   CARD_DRAFTING,
   CRIME_SELECTION,
+  FORENSIC_SETUP,
   INVESTIGATION,
   WITNESS_IDENTIFICATION,
   GAME_OVER
@@ -13,11 +14,12 @@ enum GameStatus {
 enum Role { FORENSIC_SCIENTIST, MURDERER, INVESTIGATOR, WITNESS, ACCOMPLICE }
 
 class Tile {
-  final int id;
+  final String id;
   final String title;
   final String type;
   final List<String> options;
   final int? selectedOption;
+  final String? imageUrl;
 
   Tile({
     required this.id,
@@ -25,15 +27,17 @@ class Tile {
     required this.type,
     required this.options,
     this.selectedOption,
+    this.imageUrl,
   });
 
   factory Tile.fromJson(Map<String, dynamic> json) {
     return Tile(
-      id: json['id'] as int,
+      id: json['id'].toString(),
       title: json['title'] as String,
       type: json['type'] as String,
       options: (json['options'] as List).cast<String>(),
       selectedOption: json['selected_option'] as int?,
+      imageUrl: json['image_url'] as String?,
     );
   }
 
@@ -44,6 +48,7 @@ class Tile {
       'type': type,
       'options': options,
       'selected_option': selectedOption,
+      'image_url': imageUrl,
     };
   }
 }
@@ -55,11 +60,17 @@ class Player {
   final bool isReady;
   final bool isOnline;
   final Role? role;
+  final bool isMe;
   final int? seatIndex;
-  final List<String>? meansCards;
-  final List<String>? clueCards;
+  final List<Map<String, dynamic>>? meansCards;
+  final List<Map<String, dynamic>>? clueCards;
+  final List<Map<String, dynamic>>? draftMeans;
+  final List<Map<String, dynamic>>? draftClues;
   final bool hasBadge;
+  final bool hasDrafted;
+  final int tilesReplaced;
   final List<Tile> activeTiles;
+  final String? avatarUrl;
 
   Player({
     required this.id,
@@ -71,28 +82,46 @@ class Player {
     this.seatIndex,
     this.meansCards,
     this.clueCards,
+    this.draftMeans,
+    this.draftClues,
     this.hasBadge = true,
+    this.hasDrafted = false,
+    this.tilesReplaced = 0,
     this.activeTiles = const [],
+    this.avatarUrl,
+    this.isMe = false,
   });
 
-  factory Player.fromJson(Map<String, dynamic> json) {
+  factory Player.fromJson(Map<String, dynamic> json, {String? currentUserId}) {
+    final metadata = (json['metadata'] as Map<String, dynamic>?) ?? {};
+    final id = json['id'] as String;
     return Player(
-      id: json['id'] as String,
+      id: id,
       name: json['name'] as String,
       isHost: json['is_host'] as bool? ?? false,
       isReady: json['is_ready'] as bool? ?? false,
       isOnline: json['is_online'] as bool? ?? true,
-      role: json['role'] != null
-          ? Role.values.firstWhereOrNull((e) => e.name == json['role'])
+      isMe: id == currentUserId,
+      role: metadata['role'] != null
+          ? Role.values.firstWhereOrNull((e) => e.name == metadata['role'])
           : null,
-      seatIndex: json['seat_index'] as int?,
-      meansCards: (json['means_cards'] as List?)?.cast<String>(),
-      clueCards: (json['clue_cards'] as List?)?.cast<String>(),
-      hasBadge: json['has_badge'] as bool? ?? true,
-      activeTiles: (json['active_tiles'] as List?)
+      seatIndex: metadata['seat_index'] as int?,
+      meansCards:
+          (metadata['means_cards'] as List?)?.cast<Map<String, dynamic>>(),
+      clueCards:
+          (metadata['clue_cards'] as List?)?.cast<Map<String, dynamic>>(),
+      draftMeans:
+          (metadata['draft_means'] as List?)?.cast<Map<String, dynamic>>(),
+      draftClues:
+          (metadata['draft_clues'] as List?)?.cast<Map<String, dynamic>>(),
+      hasBadge: metadata['has_badge'] as bool? ?? true,
+      hasDrafted: metadata['has_drafted'] as bool? ?? false,
+      tilesReplaced: metadata['tiles_replaced'] as int? ?? 0,
+      activeTiles: (metadata['active_tiles'] as List?)
               ?.map((t) => Tile.fromJson(t as Map<String, dynamic>))
               .toList() ??
           const [],
+      avatarUrl: metadata['avatar_url'] as String?,
     );
   }
 
@@ -122,6 +151,8 @@ class GameState {
   final String? murdererId;
   final String? solutionMeansId;
   final String? solutionClueId;
+  final Map<String, dynamic>? meansCard;
+  final Map<String, dynamic>? clueCard;
   final Map<String, dynamic> metadata;
 
   GameState({
@@ -133,24 +164,31 @@ class GameState {
     this.murdererId,
     this.solutionMeansId,
     this.solutionClueId,
+    this.meansCard,
+    this.clueCard,
     this.metadata = const {},
   });
 
-  factory GameState.fromJson(Map<String, dynamic> json) {
+  factory GameState.fromJson(Map<String, dynamic> json,
+      {String? currentUserId}) {
+    final data = (json['data'] as Map<String, dynamic>?) ?? {};
     return GameState(
       roomId: json['room_id'] as String,
       roomCode: json['room_code'] as String? ?? '',
       status:
           GameStatus.values.firstWhereOrNull((e) => e.name == json['status']) ??
               GameStatus.LOBBY,
-      round: json['round'] as int? ?? 0,
+      round: data['round'] as int? ?? 0,
       players: (json['players'] as List<dynamic>)
-          .map((p) => Player.fromJson(p as Map<String, dynamic>))
+          .map((p) => Player.fromJson(p as Map<String, dynamic>,
+              currentUserId: currentUserId))
           .toList(),
-      murdererId: json['murderer_id'] as String?,
-      solutionMeansId: json['means_id'] as String?,
-      solutionClueId: json['clue_id'] as String?,
-      metadata: (json['metadata'] as Map<String, dynamic>?) ?? const {},
+      murdererId: data['murderer_id'] as String?,
+      solutionMeansId: data['means_id'] as String?,
+      solutionClueId: data['clue_id'] as String?,
+      meansCard: data['means_card'] as Map<String, dynamic>?,
+      clueCard: data['clue_card'] as Map<String, dynamic>?,
+      metadata: (data['metadata'] as Map<String, dynamic>?) ?? const {},
     );
   }
 
@@ -164,6 +202,8 @@ class GameState {
       'murderer_id': murdererId,
       'means_id': solutionMeansId,
       'clue_id': solutionClueId,
+      'means_card': meansCard,
+      'clue_card': clueCard,
       'metadata': metadata,
     };
   }

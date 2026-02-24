@@ -1,0 +1,47 @@
+{
+    "common": {
+        "success": "Success",
+        "error": "Error",
+        "forbidden": "Forbidden"
+    },
+    "admin": {
+        "config_retrieved": "Admin configuration retrieved successfully.",
+        "storage_cleaned": "Storage cleanup completed.",
+        "required": "Administrator privileges are required for this action."
+    },
+    "game": {
+        "not_found": "Game not found.",
+        "room_not_found": "Room not found with this code!",
+        "room_full": "This room is full.",
+        "started": "Game has already started.",
+        "in_progress": "Game is in progress, cannot join!",
+        "joined": "Welcome to the game!",
+        "create_failed": "Failed to create game.",
+        "join_failed": "Failed to join game.",
+        "code_gen_failed": "Failed to generate unique room code.",
+        "only_host_can_kick": "Only host or admin can kick.",
+        "only_host_can_close": "Only host or admin can close the room.",
+        "target_not_found": "Target player not found.",
+        "status": {
+            "LOBBY": "Lobby",
+            "SETUP": "Setup",
+            "CARD_DRAFTING": "Card Drafting",
+            "CRIME_SELECTION": "Murderer Crime Selection",
+            "FORENSIC_SETUP": "Forensic Scientist Setup",
+            "INVESTIGATION": "Investigation",
+            "WITNESS_IDENTIFICATION": "Witness Identification",
+            "GAME_OVER": "Game Over"
+        },
+        "roles": {
+            "FORENSIC_SCIENTIST": "Forensic Scientist",
+            "MURDERER": "Murderer",
+            "ACCOMPLICE": "Accomplice",
+            "WITNESS": "Witness",
+            "INVESTIGATOR": "Investigator",
+            "UNKNOWN": "Unknown"
+        }
+    },
+    "cron": {
+        "cleanup_triggered": "Cleanup triggered"
+    }
+}

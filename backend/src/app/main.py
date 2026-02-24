@@ -1,16 +1,25 @@
-from fastapi import FastAPI, Depends, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, Depends, WebSocket, WebSocketDisconnect, Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+import json
+import time
+from jose import jwt
+
 from src.app.core.config import settings
 from src.app.core.logger import logger
 from src.app.core.scheduler import start_scheduler, stop_scheduler
 from src.app.core.database import init_supabase
 from src.app.core.redis import init_redis, close_redis
+from src.app.core.auth import get_current_user
+from src.app.core.middleware import error_handling_middleware, rate_limit_middleware
 from src.app.api.websocket import manager
 from src.app.api.schemas import GameUpdateMessage, MessageType
 from src.app.games.deception.manager import game_manager
-from contextlib import asynccontextmanager
-import json
-import time
+
+from src.app.api.v1.auth import router as auth_router
+from src.app.api.v1.game import router as game_router
+from src.app.api.v1.admin import router as admin_router
+from src.app.api.v1.cron import router as cron_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -26,102 +35,83 @@ async def lifespan(app: FastAPI):
     stop_scheduler()
 
 tags_metadata = [
-    {
-        "name": "General",
-        "description": "Basic server health and root endpoints.",
-    },
-    {
-        "name": "Game",
-        "description": "Game room and logic management.",
-    },
-    {
-        "name": "Realtime",
-        "description": "WebSocket endpoints for live game updates.",
-    },
+    {"name": "General", "description": "Basic server health and root endpoints."},
+    {"name": "Game", "description": "Game room and logic management."},
+    {"name": "Realtime", "description": "WebSocket endpoints for live game updates."},
 ]
 
 app = FastAPI(
     title="Deception Manager API",
-    description="""
-Professional backend for the 'Deception: Murder in Hong Kong' web adaptation.
-Provides realtime state management, game logic orchestration, and Supabase integration.
-""",
+    description="Professional backend for Deception adaptation.",
     version="1.0.0",
-    docs_url="/docs",
-    redoc_url="/redoc",
     openapi_tags=tags_metadata,
     lifespan=lifespan
 )
 
-# Set up CORS
+# Middlewares
+app.middleware("http")(error_handling_middleware)
+app.middleware("http")(rate_limit_middleware)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust in production
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-@app.get("/", tags=["General"], summary="Root endpoint")
+# Include Routers
+app.include_router(auth_router, prefix="/api/v1")
+app.include_router(game_router, prefix="/api/v1")
+app.include_router(admin_router, prefix="/api/v1")
+app.include_router(cron_router, prefix="/api/v1")
+
+@app.get("/", tags=["General"])
 async def root():
-    """Returns a welcome message."""
     return {"message": "Welcome to Manager Game API"}
 
-@app.get("/health", tags=["General"], summary="Health check")
+@app.get("/health", tags=["General"])
 async def health_check():
-    """Verifies that the server and core services are healthy."""
     return {"status": "healthy"}
 
 @app.websocket("/ws/{room_id}/{client_id}/{player_name}")
-async def websocket_endpoint(websocket: WebSocket, room_id: str, client_id: str, player_name: str):
-    """
-    Main WebSocket endpoint for game interaction.
-    
-    Handlers:
-    - Connection/Reconnection of players.
-    - Realtime stale state broadcast.
-    - Event handling (actions, chat, etc.).
-    - Disconnection cleanup.
-    """
-    await manager.connect(websocket, room_id)
-    logger.info(f"Client {client_id} ({player_name}) connected to room {room_id}")
-    
-    # Handle player connection/reconnection
+async def websocket_endpoint(websocket: WebSocket, room_id: str, client_id: str, player_name: str, token: str = Query(...)):
+    from src.app.core.auth import verify_supabase_jwt
+    try:
+        # Using shared verification logic that supports HS256 and ES256/JWKS
+        user_info = verify_supabase_jwt(token)
+        user_id = user_info.get("id")
+        
+        if user_id != client_id:
+            logger.warning(f"WebSocket Auth mismatch: token sub {user_id} != client_id {client_id}")
+            await websocket.close(code=4003)
+            return
+    except Exception as e:
+        logger.error(f"WebSocket Auth Error: {e}")
+        await websocket.close(code=4001)
+        return
+
+    await manager.connect(websocket, room_id, client_id)
     game = await game_manager.handle_player_connect(room_id, client_id, player_name)
     
     try:
-        # Initial state broadcast
-        await manager.broadcast(
-            GameUpdateMessage(
-                type=MessageType.GAME_UPDATE,
-                timestamp=time.time(),
-                state=game
-            ).model_dump(),
-            room_id
-        )
-        
+        # Initial broadcast on connect
+        await game.broadcast_state()
+
         while True:
             data = await websocket.receive_text()
             message = json.loads(data)
-            
             event_type = message.get("type")
             event_data = message.get("data", {})
             
-            logger.debug(f"Event received from {client_id} in {room_id}: {event_type}")
+            # handle_event will process logic and broadcast the new state
             await game.handle_event(client_id, event_type, event_data)
-            
-            # Broadcast updated state
-            await manager.broadcast(
-                GameUpdateMessage(
-                    type=MessageType.GAME_UPDATE,
-                    timestamp=time.time(),
-                    state=game
-                ).model_dump(),
-                room_id
-            )
     except WebSocketDisconnect:
-        manager.disconnect(websocket, room_id)
-        logger.info(f"Client {client_id} disconnected from room {room_id}")
+        manager.disconnect(websocket, room_id, client_id)
+        # Ensure we trigger the leave logic for host exit closure
+        await game.handle_event(client_id, "leave", {})
     except Exception as e:
-        logger.error(f"WebSocket Error for {client_id} in {room_id}: {e}")
-        manager.disconnect(websocket, room_id)
+        logger.error(f"WebSocket Error: {e}")
+        manager.disconnect(websocket, room_id, client_id)
+        # Note: Do NOT call handle_event(leave) here, it purges the room on logic errors.
+        # Let the host stay "online" until intentional disconnect or timeout.

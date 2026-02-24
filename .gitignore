@@ -42,3 +42,6 @@ ios/Flutter/flutter_export_environment.sh
 
 # Repomix
 repomix-output.txt
+
+# Vibe RAG Storage (Large DB files)
+.vibe/rag_storage/

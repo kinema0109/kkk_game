@@ -1,0 +1,47 @@
+{
+    "common": {
+        "success": "Thành công",
+        "error": "Lỗi",
+        "forbidden": "Bị cấm"
+    },
+    "admin": {
+        "config_retrieved": "Lấy cấu hình quản trị thành công.",
+        "storage_cleaned": "Đã dọn dẹp bộ nhớ.",
+        "required": "Quyền quản trị viên là bắt buộc để thực hiện hành động này."
+    },
+    "game": {
+        "not_found": "Không tìm thấy trò chơi.",
+        "room_not_found": "Không tìm thấy phòng với mã này!",
+        "room_full": "Phòng đã đầy.",
+        "started": "Trò chơi đã bắt đầu.",
+        "in_progress": "Game đang diễn ra, không thể tham gia!",
+        "joined": "Chào mừng bạn tham gia trò chơi!",
+        "create_failed": "Không thể tạo trò chơi.",
+        "join_failed": "Không thể tham gia trò chơi.",
+        "code_gen_failed": "Không thể tạo mã phòng truy cập.",
+        "only_host_can_kick": "Chỉ chủ phòng hoặc quản trị viên mới có thể kick người chơi.",
+        "only_host_can_close": "Chỉ chủ phòng hoặc quản trị viên mới có thể đóng phòng.",
+        "target_not_found": "Không tìm thấy người chơi mục tiêu.",
+        "status": {
+            "LOBBY": "Sảnh chờ",
+            "SETUP": "Thiết lập",
+            "CARD_DRAFTING": "Nhận thẻ",
+            "CRIME_SELECTION": "Kẻ sát nhân chọn thẻ",
+            "FORENSIC_SETUP": "Sắp xếp hiện trường",
+            "INVESTIGATION": "Điều tra",
+            "WITNESS_IDENTIFICATION": "Truy tìm nhân chứng",
+            "GAME_OVER": "Kết thúc"
+        },
+        "roles": {
+            "FORENSIC_SCIENTIST": "Giám định viên",
+            "MURDERER": "Sát nhân",
+            "ACCOMPLICE": "Đồng phạm",
+            "WITNESS": "Nhân chứng",
+            "INVESTIGATOR": "Điều tra viên",
+            "UNKNOWN": "Ẩn danh"
+        }
+    },
+    "cron": {
+        "cleanup_triggered": "Đã kích hoạt dọn dẹp"
+    }
+}

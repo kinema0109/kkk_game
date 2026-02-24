@@ -5,15 +5,18 @@ import time
 
 class BasePlayer(BaseModel):
     id: str
+    db_id: Optional[str] = None
     name: str
     is_host: bool = False
     is_ready: bool = False
     is_online: bool = True
     last_seen: float = Field(default_factory=time.time)
+    metadata: Dict[str, Any] = {}
 
 class BaseRoom(BaseModel, ABC):
     room_id: str
     room_code: str
+    host_id: Optional[str] = None
     players: List[BasePlayer] = []
     status: str = "LOBBY"
     created_at: float = Field(default_factory=time.time)

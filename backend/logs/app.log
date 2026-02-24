@@ -1,0 +1,1531 @@
+2026-02-22 08:14:08.764 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 08:14:08.883 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 08:14:09.254 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 08:14:09.257 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 08:18:52.167 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 08:18:52.168 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 08:18:52.168 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 08:18:54.101 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 08:18:54.224 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 08:18:54.600 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 08:18:54.602 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 08:20:21.273 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 08:20:21.274 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 08:20:21.274 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 08:20:23.302 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 08:20:23.417 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 08:20:23.825 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 08:20:23.827 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 08:24:58.981 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 08:24:58.982 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 08:24:58.982 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 08:25:01.735 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 08:25:01.952 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 08:25:02.321 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 08:25:02.323 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 08:33:13.503 | INFO     | src.app.main:test_crash:80 - Triggering a test crash...
+2026-02-22 08:33:13.615 | ERROR    | src.app.core.middleware:error_handling_middleware:16 - Unhandled error: division by zero
+Traceback (most recent call last):
+  File "E:\myproject\manager-game\backend\src\app\core\middleware.py", line 8, in error_handling_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 105, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 424, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 312, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\src\app\main.py", line 81, in test_crash
+    return 1 / 0
+           ~~^~~
+ZeroDivisionError: division by zero
+
+2026-02-22 08:33:34.597 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:33:34.598 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 08:33:35.448 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 08:33:35.485 | DEBUG    | src.app.api.v1.game:create_game:97 - Checking room code uniqueness: 5ATLS5
+2026-02-22 08:33:36.536 | ERROR    | src.app.api.v1.game:create_game:100 - Supabase existing check returned None for code 5ATLS5
+2026-02-22 08:35:21.010 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 08:35:21.011 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 08:35:21.012 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 08:35:23.378 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 08:35:23.566 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 08:35:23.939 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 08:35:23.941 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 08:36:34.708 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 08:36:34.709 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 08:36:34.709 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 08:36:37.085 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 08:36:37.238 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 08:36:37.607 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 08:36:37.609 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 08:36:41.523 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 08:36:41.523 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 08:36:41.524 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 08:36:43.859 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 08:36:43.992 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 08:36:44.308 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 08:36:44.311 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 08:37:12.581 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 08:37:12.582 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 08:37:12.582 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 08:37:15.252 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 08:37:15.391 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 08:37:15.724 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 08:37:15.728 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 08:37:18.769 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 08:37:18.770 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 08:37:18.771 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 08:37:21.694 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 08:37:21.838 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 08:37:22.167 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 08:37:22.169 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 08:40:58.110 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:40:58.111 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 08:40:58.517 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 08:40:58.525 | DEBUG    | src.app.api.v1.game:create_game:97 - Checking room code uniqueness: C74HN7
+2026-02-22 08:40:59.494 | DEBUG    | src.app.api.v1.game:create_game:114 - Inserting new game: C74HN7, name: Room of kinemaeins
+2026-02-22 08:40:59.775 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:40:59.775 | WARNING  | src.app.main:websocket_endpoint:86 - WebSocket Auth mismatch: token sub ca10bcb7-12bf-4e10-89ad-e258834f1f91 != client_id ad7e959b-4072-4d59-93f0-f5bd18d7e85c
+2026-02-22 08:41:01.784 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:41:01.785 | WARNING  | src.app.main:websocket_endpoint:86 - WebSocket Auth mismatch: token sub ca10bcb7-12bf-4e10-89ad-e258834f1f91 != client_id ad7e959b-4072-4d59-93f0-f5bd18d7e85c
+2026-02-22 08:41:05.837 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:41:05.838 | WARNING  | src.app.main:websocket_endpoint:86 - WebSocket Auth mismatch: token sub ca10bcb7-12bf-4e10-89ad-e258834f1f91 != client_id ad7e959b-4072-4d59-93f0-f5bd18d7e85c
+2026-02-22 08:41:11.872 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:41:11.873 | WARNING  | src.app.main:websocket_endpoint:86 - WebSocket Auth mismatch: token sub ca10bcb7-12bf-4e10-89ad-e258834f1f91 != client_id ad7e959b-4072-4d59-93f0-f5bd18d7e85c
+2026-02-22 08:41:19.878 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:41:19.878 | WARNING  | src.app.main:websocket_endpoint:86 - WebSocket Auth mismatch: token sub ca10bcb7-12bf-4e10-89ad-e258834f1f91 != client_id ad7e959b-4072-4d59-93f0-f5bd18d7e85c
+2026-02-22 08:41:29.918 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:41:29.918 | WARNING  | src.app.main:websocket_endpoint:86 - WebSocket Auth mismatch: token sub ca10bcb7-12bf-4e10-89ad-e258834f1f91 != client_id ad7e959b-4072-4d59-93f0-f5bd18d7e85c
+2026-02-22 08:44:31.295 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:44:31.296 | DEBUG    | src.app.api.v1.game:create_game:97 - Checking room code uniqueness: 374HCP
+2026-02-22 08:44:32.032 | DEBUG    | src.app.api.v1.game:create_game:114 - Inserting new game: 374HCP, name: Room of kinemaeins
+2026-02-22 08:44:32.232 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:44:32.232 | WARNING  | src.app.main:websocket_endpoint:86 - WebSocket Auth mismatch: token sub ca10bcb7-12bf-4e10-89ad-e258834f1f91 != client_id ad7e959b-4072-4d59-93f0-f5bd18d7e85c
+2026-02-22 08:44:38.077 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:44:38.078 | DEBUG    | src.app.api.v1.game:create_game:97 - Checking room code uniqueness: 2SR5V5
+2026-02-22 08:44:38.355 | DEBUG    | src.app.api.v1.game:create_game:114 - Inserting new game: 2SR5V5, name: Room of kinemaeins
+2026-02-22 08:44:38.539 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:44:38.540 | WARNING  | src.app.main:websocket_endpoint:86 - WebSocket Auth mismatch: token sub ca10bcb7-12bf-4e10-89ad-e258834f1f91 != client_id ad7e959b-4072-4d59-93f0-f5bd18d7e85c
+2026-02-22 08:59:25.622 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:59:25.624 | DEBUG    | src.app.api.v1.game:create_game:97 - Checking room code uniqueness: B7FT59
+2026-02-22 08:59:26.653 | DEBUG    | src.app.api.v1.game:create_game:114 - Inserting new game: B7FT59, name: Room of kinemaeins
+2026-02-22 08:59:26.852 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 08:59:26.852 | WARNING  | src.app.main:websocket_endpoint:86 - WebSocket Auth mismatch: token sub ca10bcb7-12bf-4e10-89ad-e258834f1f91 != client_id ad7e959b-4072-4d59-93f0-f5bd18d7e85c
+2026-02-22 09:00:09.936 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:09.936 | DEBUG    | src.app.api.v1.game:create_game:97 - Checking room code uniqueness: 3RC5FZ
+2026-02-22 09:00:10.388 | DEBUG    | src.app.api.v1.game:create_game:114 - Inserting new game: 3RC5FZ, name: Room of kinemaeins
+2026-02-22 09:00:10.537 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:10.679 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:12.717 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:12.786 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:14.819 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:14.887 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:16.919 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:16.987 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:19.026 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:19.096 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:21.139 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:21.208 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:23.252 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:23.324 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:25.349 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:25.418 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:27.447 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:27.516 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:29.548 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:29.617 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:31.641 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:31.710 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:33.741 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:33.810 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:35.838 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:35.907 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:37.939 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:38.008 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:40.041 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:40.111 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:42.160 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:42.230 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:44.252 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:44.320 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:46.344 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:46.414 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:48.446 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:48.515 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:50.539 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:50.609 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:52.636 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:52.705 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:54.731 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:54.800 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:56.830 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:56.900 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:00:58.928 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:00:58.997 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:01.025 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:01.094 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:03.111 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:03.185 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:05.208 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:05.278 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:07.303 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:07.372 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:09.392 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:09.461 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:11.499 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:11.568 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:13.611 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:13.679 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:15.716 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:15.785 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:17.809 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:17.879 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:19.896 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:19.965 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:21.986 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:22.056 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:24.085 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:24.153 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:26.193 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:26.262 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:28.290 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:28.361 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:30.393 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:30.463 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:32.489 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:32.557 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:34.572 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:34.642 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:36.669 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:36.738 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:38.775 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:38.843 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:40.862 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:40.931 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:42.961 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:43.029 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:45.060 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:45.129 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:47.158 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:47.227 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:49.253 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:49.322 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:51.352 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:51.421 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:53.451 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:53.526 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:55.552 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:01:55.622 | ERROR    | src.app.main:websocket_endpoint:115 - WebSocket Error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='3R...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-22 09:01:56.716 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 09:01:56.716 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 09:01:56.717 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 09:05:19.410 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 09:05:19.540 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 09:05:19.937 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 09:05:19.939 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 09:05:23.285 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:05:23.286 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 09:05:23.556 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 09:05:23.564 | DEBUG    | src.app.api.v1.game:create_game:97 - Checking room code uniqueness: LVQW6D
+2026-02-22 09:05:23.926 | DEBUG    | src.app.api.v1.game:create_game:114 - Inserting new game: LVQW6D, name: Room of kinemaeins
+2026-02-22 09:05:24.099 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:05:37.257 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:05:39.092 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:05:40.568 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:05:42.506 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:11:28.758 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:11:30.738 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:11:48.255 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:11:50.234 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:13:15.295 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:13:19.040 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:14:06.606 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:20:51.071 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 09:20:51.072 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 09:20:51.072 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 09:20:53.356 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 09:20:53.576 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 09:20:53.955 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 09:20:53.958 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 09:29:48.920 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:29:48.920 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 09:29:49.328 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 09:29:53.899 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:29:53.900 | DEBUG    | src.app.api.v1.game:create_game:97 - Checking room code uniqueness: N39AZ9
+2026-02-22 09:29:54.292 | DEBUG    | src.app.api.v1.game:create_game:114 - Inserting new game: N39AZ9, name: Room of kinemaeins
+2026-02-22 09:29:54.694 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:29:56.654 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 09:31:41.004 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 09:31:41.004 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 09:31:41.005 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 12:49:08.186 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 12:49:08.194 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 12:49:08.194 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 12:49:12.477 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 12:49:12.715 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 12:49:13.216 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 12:49:13.218 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 12:49:17.456 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 12:49:17.457 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 12:49:17.458 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 12:49:19.262 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 12:49:19.368 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 12:49:19.699 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 12:49:19.701 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 12:49:29.712 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 12:49:29.712 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 12:49:29.714 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 12:49:32.427 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 12:49:32.568 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 12:49:32.912 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 12:49:32.915 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 12:57:20.210 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 12:57:20.211 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 12:57:21.136 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 12:57:23.025 | ERROR    | src.app.core.middleware:error_handling_middleware:16 - Unhandled error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='1f...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+Traceback (most recent call last):
+  File "E:\myproject\manager-game\backend\src\app\core\middleware.py", line 8, in error_handling_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 105, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 424, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 312, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\src\app\api\v1\game.py", line 194, in join_game
+    await broadcast_game_state(game_obj)
+  File "E:\myproject\manager-game\backend\src\app\api\v1\game.py", line 21, in broadcast_game_state
+    GameUpdateMessage(
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='1f...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+
+2026-02-22 12:57:25.481 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 12:57:26.126 | ERROR    | src.app.core.middleware:error_handling_middleware:16 - Unhandled error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='1f...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+Traceback (most recent call last):
+  File "E:\myproject\manager-game\backend\src\app\core\middleware.py", line 8, in error_handling_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 105, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 424, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 312, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\src\app\api\v1\game.py", line 194, in join_game
+    await broadcast_game_state(game_obj)
+  File "E:\myproject\manager-game\backend\src\app\api\v1\game.py", line 21, in broadcast_game_state
+    GameUpdateMessage(
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='1f...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+
+2026-02-22 12:57:36.338 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 12:57:38.799 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 12:57:39.470 | ERROR    | src.app.core.middleware:error_handling_middleware:16 - Unhandled error: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='1f...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+Traceback (most recent call last):
+  File "E:\myproject\manager-game\backend\src\app\core\middleware.py", line 8, in error_handling_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 105, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 424, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\fastapi\routing.py", line 312, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\myproject\manager-game\backend\src\app\api\v1\game.py", line 194, in join_game
+    await broadcast_game_state(game_obj)
+  File "E:\myproject\manager-game\backend\src\app\api\v1\game.py", line 21, in broadcast_game_state
+    GameUpdateMessage(
+  File "E:\myproject\manager-game\backend\.venv\Lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GameUpdateMessage
+state
+  Input should be a valid dictionary or instance of GameState [type=model_type, input_value=DeceptionGame(room_id='1f...s_id=None, clue_id=None), input_type=DeceptionGame]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+
+2026-02-22 13:02:36.975 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:02:36.977 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:02:36.977 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:02:39.354 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:02:39.534 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:02:40.038 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:02:40.040 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:05:04.645 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:05:04.645 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 13:05:05.036 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 13:05:50.649 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:13:27.357 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:14:28.241 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:14:28.241 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:14:28.243 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:14:30.472 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:14:30.648 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:14:31.018 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:14:31.020 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:14:38.767 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:14:38.767 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:14:38.768 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:14:41.301 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:14:41.430 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:14:41.775 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:14:41.776 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:22:28.034 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:22:28.035 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:22:28.036 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:22:30.636 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:22:30.827 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:22:31.323 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:22:31.325 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:22:47.670 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:22:47.670 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:22:47.671 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:22:50.162 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:22:50.304 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:22:50.694 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:22:50.698 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:23:00.602 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:23:00.603 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:23:00.603 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:23:03.020 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:23:03.142 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:23:03.478 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:23:03.480 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:23:18.724 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:23:18.725 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:23:18.726 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:23:21.079 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:23:21.221 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:23:21.607 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:23:21.609 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:33:53.633 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:33:53.633 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 13:33:54.072 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 13:33:56.746 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:33:56.747 | DEBUG    | src.app.api.v1.game:create_game:98 - Checking room code uniqueness: RCH3DJ
+2026-02-22 13:33:56.900 | DEBUG    | src.app.api.v1.game:create_game:115 - Inserting new game: RCH3DJ, name: Room of kinemaeins
+2026-02-22 13:33:57.077 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:37:43.680 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:38:49.679 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:38:51.139 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:38:52.003 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:39:46.841 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:40:04.679 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:40:07.627 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:40:08.262 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:40:18.789 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:40:19.982 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:40:20.622 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:40:22.609 | WARNING  | src.app.games.deception.logic:handle_event:213 - Unauthorized start_game attempt by ca10bcb7-12bf-4e10-89ad-e258834f1f91
+2026-02-22 13:40:27.351 | WARNING  | src.app.games.deception.logic:handle_event:213 - Unauthorized start_game attempt by ca10bcb7-12bf-4e10-89ad-e258834f1f91
+2026-02-22 13:40:39.595 | WARNING  | src.app.games.deception.logic:handle_event:213 - Unauthorized start_game attempt by 0ad4cebb-71c3-499c-8715-d0781f1dc8d3
+2026-02-22 13:40:45.033 | WARNING  | src.app.games.deception.logic:handle_event:213 - Unauthorized start_game attempt by 48c4dcf4-a3cd-4da3-aaa8-5b7e3323ccf5
+2026-02-22 13:40:48.212 | WARNING  | src.app.games.deception.logic:handle_event:213 - Unauthorized start_game attempt by 855529e5-b9ce-445b-8879-aee5c28eb3a6
+2026-02-22 13:40:50.391 | WARNING  | src.app.games.deception.logic:handle_event:213 - Unauthorized start_game attempt by ca10bcb7-12bf-4e10-89ad-e258834f1f91
+2026-02-22 13:41:41.224 | ERROR    | src.app.games.deception.logic:sync_to_supabase:123 - Supabase sync error: {'message': 'invalid input syntax for type uuid: "RCH3DJ"', 'code': '22P02', 'hint': None, 'details': None}
+2026-02-22 13:41:41.564 | ERROR    | src.app.games.deception.logic:sync_to_supabase:123 - Supabase sync error: {'message': 'invalid input syntax for type uuid: "RCH3DJ"', 'code': '22P02', 'hint': None, 'details': None}
+2026-02-22 13:41:41.706 | ERROR    | src.app.games.deception.logic:sync_to_supabase:123 - Supabase sync error: {'message': 'invalid input syntax for type uuid: "RCH3DJ"', 'code': '22P02', 'hint': None, 'details': None}
+2026-02-22 13:41:41.819 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:41:41.820 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:41:41.821 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:41:44.784 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:41:45.012 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:41:45.296 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:41:45.299 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:41:45.308 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:41:45.308 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:41:45.308 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 13:41:45.308 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:41:45.309 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:41:45.449 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 13:41:54.828 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:41:54.829 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:41:54.829 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:41:57.122 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:41:57.245 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:41:57.630 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:41:57.632 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:42:07.307 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:42:07.309 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:42:07.309 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:42:09.582 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:42:09.709 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:42:10.046 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:42:10.049 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:42:39.130 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:42:39.130 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 13:42:39.286 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 13:42:40.890 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:42:42.732 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:43:17.735 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:43:49.903 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:43:51.450 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:44:11.674 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:48:03.033 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:48:03.035 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:48:03.036 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:48:15.060 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:48:15.232 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:48:15.652 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:48:15.655 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:49:46.123 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:49:46.123 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 13:49:46.611 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 13:49:48.114 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:49:48.115 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: PSCG7L
+2026-02-22 13:49:48.258 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: PSCG7L, name: Room of kinemazwei
+2026-02-22 13:49:48.424 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:50:20.855 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:50:26.707 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:50:30.557 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:51:11.840 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:51:12.856 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:51:13.546 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:51:30.421 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:51:31.309 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:51:31.981 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:51:48.524 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:51:49.806 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:51:50.462 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:52:05.361 | WARNING  | src.app.games.deception.logic:handle_event:213 - Unauthorized start_game attempt by 2cc841d7-300b-4cc8-942e-5bcdb0a3ce3f
+2026-02-22 13:52:19.224 | WARNING  | src.app.games.deception.logic:handle_event:213 - Unauthorized start_game attempt by 2cc841d7-300b-4cc8-942e-5bcdb0a3ce3f
+2026-02-22 13:52:22.388 | WARNING  | src.app.games.deception.logic:handle_event:213 - Unauthorized start_game attempt by 0ad4cebb-71c3-499c-8715-d0781f1dc8d3
+2026-02-22 13:52:28.462 | ERROR    | src.app.main:websocket_endpoint:114 - WebSocket Error: {'message': 'insert or update on table "game_cards" violates foreign key constraint "game_cards_player_id_fkey"', 'code': '23503', 'hint': None, 'details': 'Key is not present in table "players".'}
+2026-02-22 13:52:28.462 | INFO     | src.app.games.deception.logic:handle_event:257 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 81ad5be0-6eb4-4eef-a75b-df344d985f29. Purging room.
+2026-02-22 13:52:28.849 | INFO     | src.app.games.deception.logic:close_game:387 - Game room 81ad5be0-6eb4-4eef-a75b-df344d985f29 has been fully closed and purged.
+2026-02-22 13:52:28.917 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:52:47.964 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:52:59.816 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:53:01.800 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:53:04.189 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:53:05.006 | INFO     | src.app.games.deception.logic:close_game:387 - Game room 81ad5be0-6eb4-4eef-a75b-df344d985f29 has been fully closed and purged.
+2026-02-22 13:54:08.428 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:08.429 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: GA2B3X
+2026-02-22 13:54:08.643 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: GA2B3X, name: Room of kinemazwei
+2026-02-22 13:54:08.912 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:11.579 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:12.611 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:13.256 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:14.723 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:15.659 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:16.303 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:17.421 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:17.700 | INFO     | src.app.games.deception.logic:handle_event:257 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room eacb9119-2cdc-4d09-9600-19b403e6821c. Purging room.
+2026-02-22 13:54:18.259 | INFO     | src.app.games.deception.logic:close_game:387 - Game room eacb9119-2cdc-4d09-9600-19b403e6821c has been fully closed and purged.
+2026-02-22 13:54:18.667 | INFO     | src.app.games.deception.logic:close_game:387 - Game room eacb9119-2cdc-4d09-9600-19b403e6821c has been fully closed and purged.
+2026-02-22 13:54:18.779 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:54:18.780 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:54:18.782 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:54:21.585 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:54:21.734 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:54:22.004 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:54:22.006 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:54:22.018 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:22.018 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:22.018 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 13:54:22.018 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:22.021 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:22.167 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 13:54:24.330 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:27.087 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:54:27.088 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:54:27.089 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:54:29.333 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:54:29.439 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:54:29.780 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:54:29.782 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:54:34.664 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:54:34.664 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 13:54:34.829 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 13:54:46.431 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:54:46.432 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:54:46.433 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:54:48.490 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:54:48.611 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:54:48.990 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:54:48.992 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:54:57.156 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:54:57.157 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:54:57.157 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:54:59.501 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:54:59.624 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:54:59.978 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:54:59.981 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:55:08.801 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:55:08.802 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:55:08.802 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:55:11.106 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:55:11.226 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:55:11.559 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:55:11.562 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:55:36.255 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:36.255 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 13:55:36.420 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 13:55:36.429 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: J7JWNV
+2026-02-22 13:55:36.671 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: J7JWNV, name: Room of kinemazwei
+2026-02-22 13:55:36.821 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:42.021 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:42.839 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:43.470 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:45.725 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:46.573 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:47.212 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:51.134 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:52.026 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:52.660 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:55:56.024 | ERROR    | src.app.main:websocket_endpoint:114 - WebSocket Error: {'message': 'insert or update on table "game_cards" violates foreign key constraint "game_cards_player_id_fkey"', 'code': '23503', 'hint': None, 'details': 'Key is not present in table "players".'}
+2026-02-22 13:55:56.025 | INFO     | src.app.games.deception.logic:handle_event:260 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 90bcc317-0696-4d5a-8bb1-8acb45a1e0ec. Purging room.
+2026-02-22 13:55:56.382 | INFO     | src.app.games.deception.logic:close_game:390 - Game room 90bcc317-0696-4d5a-8bb1-8acb45a1e0ec has been fully closed and purged.
+2026-02-22 13:55:56.424 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:57:14.923 | INFO     | src.app.games.deception.logic:close_game:390 - Game room 90bcc317-0696-4d5a-8bb1-8acb45a1e0ec has been fully closed and purged.
+2026-02-22 13:57:15.026 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:57:15.027 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:57:15.027 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:57:17.878 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:57:18.024 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:57:18.305 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:57:18.306 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:57:18.317 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:57:18.318 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:57:18.318 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:57:18.318 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 13:57:18.458 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 13:57:22.973 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:57:22.973 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:57:22.974 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:57:25.660 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:57:25.828 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:57:26.164 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:57:26.168 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:57:31.286 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 13:57:31.286 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 13:57:31.287 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 13:57:33.466 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 13:57:33.600 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 13:57:33.917 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 13:57:33.920 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 13:58:23.162 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:58:23.162 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 13:58:23.572 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 13:58:23.583 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: U77CGM
+2026-02-22 13:58:23.824 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: U77CGM, name: Room of kinemazwei
+2026-02-22 13:58:24.103 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:58:26.130 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:58:27.044 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:58:27.646 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:58:28.947 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:58:29.690 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:58:30.328 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:58:32.738 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:58:33.530 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 13:58:34.158 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:14:11.035 | INFO     | src.app.games.deception.logic:handle_event:260 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room fbe177a3-88ad-4244-8a6e-658c0891fe19. Purging room.
+2026-02-22 14:14:13.231 | INFO     | src.app.games.deception.logic:close_game:390 - Game room fbe177a3-88ad-4244-8a6e-658c0891fe19 has been fully closed and purged.
+2026-02-22 14:14:13.273 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 14:14:13.274 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 14:14:13.274 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 14:14:15.314 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 14:14:15.471 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 14:14:15.753 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 14:14:15.755 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 14:14:15.762 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:14:15.762 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 14:14:16.209 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 14:14:16.230 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:14:16.233 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:14:16.234 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:14:20.243 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:14:26.265 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:14:32.021 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 14:14:32.022 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 14:14:32.023 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 14:14:33.752 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 14:14:33.873 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 14:14:34.251 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 14:14:34.253 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 14:14:34.282 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:14:34.283 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 14:14:34.425 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 14:14:40.088 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 14:14:40.088 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 14:14:40.089 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 14:14:41.836 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 14:14:41.953 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 14:14:42.322 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 14:14:42.324 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 14:14:42.326 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:14:42.326 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 14:14:42.520 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 14:14:56.687 | INFO     | src.app.games.deception.logic:close_game:390 - Game room fbe177a3-88ad-4244-8a6e-658c0891fe19 has been fully closed and purged.
+2026-02-22 14:14:56.729 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 14:14:56.730 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 14:14:56.730 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 14:14:58.683 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 14:14:58.813 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 14:14:59.141 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 14:14:59.143 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 14:14:59.146 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:14:59.146 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 14:14:59.281 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 14:18:25.498 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:28.910 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:29.201 | INFO     | src.app.games.deception.logic:close_game:415 - Game room fbe177a3-88ad-4244-8a6e-658c0891fe19 has been fully closed and purged.
+2026-02-22 14:18:30.821 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:30.822 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: D4S5V2
+2026-02-22 14:18:30.955 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: D4S5V2, name: Room of kinemazwei
+2026-02-22 14:18:31.258 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:34.508 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:35.358 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:35.980 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:37.618 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:38.560 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:39.191 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:41.353 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:42.464 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 14:18:43.080 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 15:15:59.153 | INFO     | src.app.core.scheduler:cleanup_inactive_rooms:24 - Scavenger: Removing stale room fbe177a3-88ad-4244-8a6e-658c0891fe19
+2026-02-22 16:58:27.385 | INFO     | src.app.games.deception.logic:handle_event:285 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 48670078-0160-4d64-8d43-74589a21ffeb. Purging room.
+2026-02-22 18:02:04.860 | ERROR    | src.app.core.database:get_supabase:21 - get_supabase called before initialization or initialization failed
+2026-02-22 18:18:30.634 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 18:18:30.754 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 18:18:31.132 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 18:18:31.136 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 18:19:52.993 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:19:52.993 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 18:19:53.511 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 18:19:56.102 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:19:56.103 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: W9G6RL
+2026-02-22 18:19:56.254 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: W9G6RL, name: Room of kinemazwei
+2026-02-22 18:19:56.593 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:19:57.188 | ERROR    | src.app.games.deception.logic:broadcast_state:133 - Error broadcasting state for room e7d08006-54e4-46e8-bb1b-5224d9f6a57e: {'message': 'column library_cards.name does not exist', 'code': '42703', 'hint': None, 'details': None}
+2026-02-22 18:19:58.072 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:19:58.072 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: LRP3Z2
+2026-02-22 18:19:58.215 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: LRP3Z2, name: Room of kinemazwei
+2026-02-22 18:19:58.501 | INFO     | src.app.games.deception.logic:handle_event:305 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room e7d08006-54e4-46e8-bb1b-5224d9f6a57e. Purging room.
+2026-02-22 18:19:58.797 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:19:58.864 | INFO     | src.app.games.deception.logic:close_game:455 - Game room e7d08006-54e4-46e8-bb1b-5224d9f6a57e has been fully closed and purged.
+2026-02-22 18:20:03.388 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:20:05.071 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:20:06.655 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:20:52.150 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:20:53.093 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:20:53.744 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:20:55.662 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:20:56.462 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:20:57.112 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:20:59.221 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:21:00.022 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:21:00.644 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:23:29.948 | INFO     | src.app.games.deception.logic:handle_event:305 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room d67e5f1e-2340-42e1-8984-a24dff776733. Purging room.
+2026-02-22 18:23:30.879 | INFO     | src.app.games.deception.logic:close_game:455 - Game room d67e5f1e-2340-42e1-8984-a24dff776733 has been fully closed and purged.
+2026-02-22 18:23:31.232 | INFO     | src.app.games.deception.logic:close_game:455 - Game room d67e5f1e-2340-42e1-8984-a24dff776733 has been fully closed and purged.
+2026-02-22 18:23:31.344 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 18:23:31.345 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 18:23:31.345 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 18:23:33.343 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 18:23:33.512 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 18:23:33.788 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 18:23:33.790 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 18:23:33.799 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:23:33.799 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 18:23:33.800 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:23:33.800 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:23:33.800 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:23:34.596 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 18:25:18.831 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:21.852 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:22.653 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:22.654 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: 2AXE4V
+2026-02-22 18:25:22.804 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: 2AXE4V, name: Room of kinemazwei
+2026-02-22 18:25:23.135 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:23.722 | ERROR    | src.app.games.deception.logic:broadcast_state:144 - Error broadcasting state for room 74678761-2a3b-4f5f-8aa8-03ec545cfd9b: {'message': 'column library_cards.name does not exist', 'code': '42703', 'hint': None, 'details': None}
+2026-02-22 18:25:37.785 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:37.786 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: EB7YG4
+2026-02-22 18:25:38.010 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: EB7YG4, name: Room of kinemazwei
+2026-02-22 18:25:38.320 | INFO     | src.app.games.deception.logic:handle_event:332 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 74678761-2a3b-4f5f-8aa8-03ec545cfd9b. Purging room.
+2026-02-22 18:25:38.633 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:38.699 | INFO     | src.app.games.deception.logic:close_game:482 - Game room 74678761-2a3b-4f5f-8aa8-03ec545cfd9b has been fully closed and purged.
+2026-02-22 18:25:43.140 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:44.005 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:44.711 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:46.740 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:47.822 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:48.524 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:49.741 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:50.653 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:25:51.334 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:26:25.265 | INFO     | src.app.games.deception.logic:handle_event:332 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 75862d70-fee2-4e6a-9c4c-598809316cf0. Purging room.
+2026-02-22 18:26:26.168 | INFO     | src.app.games.deception.logic:close_game:482 - Game room 75862d70-fee2-4e6a-9c4c-598809316cf0 has been fully closed and purged.
+2026-02-22 18:26:26.579 | INFO     | src.app.games.deception.logic:close_game:482 - Game room 75862d70-fee2-4e6a-9c4c-598809316cf0 has been fully closed and purged.
+2026-02-22 18:26:26.617 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 18:26:26.618 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 18:26:26.618 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 18:26:28.898 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 18:26:29.014 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 18:26:29.298 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 18:26:29.300 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 18:26:29.310 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:26:29.311 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:26:29.311 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 18:26:29.312 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:26:29.312 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:26:29.457 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 18:28:19.951 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:19.952 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: MSYSPF
+2026-02-22 18:28:20.432 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: MSYSPF, name: Room of kinemazwei
+2026-02-22 18:28:20.796 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:21.391 | ERROR    | src.app.games.deception.logic:broadcast_state:156 - Error broadcasting state for room a81a6e91-72fb-4be6-a53f-e4d224675bd7: {'message': 'column library_cards.name does not exist', 'code': '42703', 'hint': None, 'details': None}
+2026-02-22 18:28:24.486 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:24.487 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: JA93RB
+2026-02-22 18:28:24.762 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: JA93RB, name: Room of kinemazwei
+2026-02-22 18:28:25.291 | INFO     | src.app.games.deception.logic:handle_event:344 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room a81a6e91-72fb-4be6-a53f-e4d224675bd7. Purging room.
+2026-02-22 18:28:25.722 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:25.788 | INFO     | src.app.games.deception.logic:close_game:494 - Game room a81a6e91-72fb-4be6-a53f-e4d224675bd7 has been fully closed and purged.
+2026-02-22 18:28:30.498 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:31.322 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:31.990 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:33.524 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:34.520 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:35.210 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:37.315 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:38.288 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:28:38.938 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 18:29:52.671 | ERROR    | src.app.core.database:get_supabase:21 - get_supabase called before initialization or initialization failed
+2026-02-22 19:02:31.668 | INFO     | src.app.games.deception.logic:handle_event:344 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 22c14f7a-a048-43dc-9839-796b6306380b. Purging room.
+2026-02-22 19:02:32.790 | INFO     | src.app.games.deception.logic:close_game:494 - Game room 22c14f7a-a048-43dc-9839-796b6306380b has been fully closed and purged.
+2026-02-22 19:02:33.198 | INFO     | src.app.games.deception.logic:close_game:494 - Game room 22c14f7a-a048-43dc-9839-796b6306380b has been fully closed and purged.
+2026-02-22 19:02:33.240 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:02:33.240 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:02:33.240 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:02:35.391 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:02:35.628 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:02:35.902 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:02:35.905 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:02:35.914 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:02:35.914 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 19:02:35.915 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:02:35.915 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:02:35.916 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:02:36.207 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 19:05:44.914 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:05:44.915 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: G7AD5B
+2026-02-22 19:05:45.203 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: G7AD5B, name: Room of kinemazwei
+2026-02-22 19:05:45.603 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:05:49.221 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:05:50.112 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:05:50.781 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:05:52.191 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:05:53.062 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:05:53.860 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:05:55.228 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:05:56.111 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:05:56.802 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:09:10.030 | INFO     | src.app.games.deception.logic:handle_event:344 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 5838d521-264e-4c7b-b97f-dea5456ad4c3. Purging room.
+2026-02-22 19:09:11.012 | INFO     | src.app.games.deception.logic:close_game:494 - Game room 5838d521-264e-4c7b-b97f-dea5456ad4c3 has been fully closed and purged.
+2026-02-22 19:09:11.421 | INFO     | src.app.games.deception.logic:close_game:494 - Game room 5838d521-264e-4c7b-b97f-dea5456ad4c3 has been fully closed and purged.
+2026-02-22 19:09:11.663 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:09:11.665 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:09:11.665 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:09:13.658 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:09:13.827 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:09:14.101 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:09:14.103 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:09:14.112 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:09:14.112 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 19:09:14.112 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:09:14.112 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:09:14.114 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:09:14.264 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 19:09:21.236 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:09:21.237 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:09:21.238 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:09:22.977 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:09:23.084 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:09:23.450 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:09:23.452 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:09:31.829 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:09:31.829 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:09:31.829 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:09:33.519 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:09:33.630 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:09:33.948 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:09:33.950 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:10:57.517 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:10:57.518 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 19:10:57.690 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 19:10:57.697 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: Z6QRZL
+2026-02-22 19:10:58.282 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: Z6QRZL, name: Room of kinemazwei
+2026-02-22 19:10:58.669 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:11:00.253 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:11:01.084 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:11:01.758 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:11:02.910 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:11:03.755 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:11:04.428 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:11:06.474 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:11:07.511 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:11:08.155 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:13:46.190 | INFO     | src.app.games.deception.logic:handle_event:334 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 24ce9da9-a6d4-4643-b57f-3b623bb518bf. Purging room.
+2026-02-22 19:13:47.249 | INFO     | src.app.games.deception.logic:close_game:484 - Game room 24ce9da9-a6d4-4643-b57f-3b623bb518bf has been fully closed and purged.
+2026-02-22 19:13:47.476 | INFO     | src.app.games.deception.logic:close_game:484 - Game room 24ce9da9-a6d4-4643-b57f-3b623bb518bf has been fully closed and purged.
+2026-02-22 19:13:47.508 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:13:47.509 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:13:47.509 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:13:49.427 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:13:49.586 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:13:49.851 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:13:49.853 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:13:49.862 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:13:49.862 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:13:49.862 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 19:13:49.863 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:13:49.863 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:13:50.182 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 19:13:54.526 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:13:54.527 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:13:54.527 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:13:56.412 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:13:56.518 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:13:56.870 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:13:56.872 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:14:16.140 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:14:16.141 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:14:16.141 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:14:17.934 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:14:18.038 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:14:18.416 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:14:18.419 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:16:20.145 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:16:20.145 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:16:20.146 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:16:21.958 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:16:22.107 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:16:22.482 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:16:22.484 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:16:27.279 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:16:27.280 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:16:27.280 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:16:29.031 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:16:29.142 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:16:29.448 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:16:29.452 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:17:10.996 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:10.996 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 19:17:11.390 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 19:17:11.398 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: 83JEE9
+2026-02-22 19:17:12.056 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: 83JEE9, name: Room of kinemazwei
+2026-02-22 19:17:12.386 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:13.113 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:14.012 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:14.663 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:16.286 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:17.058 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:17.706 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:19.364 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:21.496 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:22.111 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:17:49.846 | ERROR    | src.app.main:websocket_endpoint:114 - WebSocket Error: {'message': 'insert or update on table "game_cards" violates foreign key constraint "game_cards_player_id_fkey"', 'code': '23503', 'hint': None, 'details': 'Key is not present in table "players".'}
+2026-02-22 19:17:49.901 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:19:21.111 | INFO     | src.app.games.deception.logic:handle_event:329 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room aaf4eb36-c0c3-469b-9014-bc7434440a3b. Purging room.
+2026-02-22 19:19:22.560 | INFO     | src.app.games.deception.logic:close_game:507 - Game room aaf4eb36-c0c3-469b-9014-bc7434440a3b has been fully closed and purged.
+2026-02-22 19:19:22.662 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:19:22.662 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:19:22.663 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:19:24.630 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:19:24.788 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:19:25.067 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:19:25.069 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:19:25.077 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:19:25.079 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:19:25.079 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 19:19:25.079 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:19:25.225 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 19:20:27.919 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:20:27.920 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: UUMCLG
+2026-02-22 19:20:28.179 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: UUMCLG, name: Room of kinemazwei
+2026-02-22 19:20:28.563 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:20:30.582 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:20:31.297 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:20:31.977 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:20:34.053 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:20:34.734 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:20:35.403 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:20:37.148 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:20:37.888 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:20:38.581 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:28:14.566 | INFO     | src.app.games.deception.logic:handle_event:329 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 60dfe0ea-ac77-4560-b12b-69e6f816beab. Purging room.
+2026-02-22 19:28:16.485 | INFO     | src.app.games.deception.logic:close_game:508 - Game room 60dfe0ea-ac77-4560-b12b-69e6f816beab has been fully closed and purged.
+2026-02-22 19:28:16.486 | INFO     | src.app.games.deception.logic:close_game:508 - Game room 60dfe0ea-ac77-4560-b12b-69e6f816beab has been fully closed and purged.
+2026-02-22 19:28:16.586 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 19:28:16.586 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 19:28:16.588 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 19:28:30.558 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 19:28:30.714 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 19:28:31.038 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 19:28:31.039 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 19:28:31.048 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:28:31.048 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 19:28:31.049 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:28:31.049 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:28:31.050 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:28:31.325 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 19:35:49.568 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:35:49.569 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: J9UEPM
+2026-02-22 19:35:50.382 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: J9UEPM, name: Room of kinemazwei
+2026-02-22 19:35:50.773 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:35:51.608 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:35:52.475 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:35:53.231 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:35:54.362 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:35:55.176 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:35:55.826 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:35:57.108 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:35:57.825 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:35:58.446 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 19:36:00.879 | WARNING  | src.app.games.deception.logic:handle_event:287 - Unauthorized start_game attempt by 48c4dcf4-a3cd-4da3-aaa8-5b7e3323ccf5
+2026-02-22 21:23:41.152 | INFO     | src.app.games.deception.logic:handle_event:331 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 648e7cc0-1cc6-4f53-b711-891d45829a00. Purging room.
+2026-02-22 21:23:42.908 | INFO     | src.app.games.deception.logic:close_game:541 - Game room 648e7cc0-1cc6-4f53-b711-891d45829a00 has been fully closed and purged.
+2026-02-22 21:23:42.934 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 21:23:42.935 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 21:23:42.936 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 21:23:46.676 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 21:23:46.879 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 21:23:47.187 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 21:23:47.189 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 21:23:47.212 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:23:47.212 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 21:23:47.212 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:23:47.213 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:23:47.215 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:23:47.699 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 21:30:34.699 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:30:34.699 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: 2SPLP8
+2026-02-22 21:30:36.205 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: 2SPLP8, name: Room of kinemazwei
+2026-02-22 21:30:36.734 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:30:41.818 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:30:43.064 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:30:43.961 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:30:45.382 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:30:46.709 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:30:47.464 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:30:48.861 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:30:49.830 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:30:50.727 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:37:17.230 | INFO     | src.app.games.deception.logic:handle_event:333 - Host 855529e5-b9ce-445b-8879-aee5c28eb3a6 left room 58934ca3-2ea1-45e3-9f09-8f25f0940272. Purging room.
+2026-02-22 21:37:17.968 | INFO     | src.app.games.deception.logic:close_game:543 - Game room 58934ca3-2ea1-45e3-9f09-8f25f0940272 has been fully closed and purged.
+2026-02-22 21:37:18.376 | INFO     | src.app.games.deception.logic:close_game:543 - Game room 58934ca3-2ea1-45e3-9f09-8f25f0940272 has been fully closed and purged.
+2026-02-22 21:37:18.629 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 21:37:18.630 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 21:37:18.630 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 21:37:20.907 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 21:37:21.072 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 21:37:21.346 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 21:37:21.348 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-22 21:37:21.356 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:37:21.357 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:37:21.357 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-22 21:37:21.358 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:37:21.358 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-22 21:37:21.657 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-22 23:20:21.429 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-22 23:20:21.431 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-22 23:20:21.432 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-22 23:20:23.501 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-22 23:20:23.682 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-22 23:20:24.180 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-22 23:20:24.182 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-23 08:43:13.623 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-23 08:43:13.763 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-23 08:43:14.325 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-23 08:43:14.327 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-23 08:46:14.575 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:46:14.575 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-23 08:46:15.580 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-23 08:46:15.590 | ERROR    | src.app.core.auth:get_current_user:140 - JWT Decode error: Signature has expired.
+2026-02-23 08:47:13.376 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:47:13.377 | DEBUG    | src.app.api.v1.game:create_game:100 - Checking room code uniqueness: DV3CJN
+2026-02-23 08:47:14.256 | DEBUG    | src.app.api.v1.game:create_game:117 - Inserting new game: DV3CJN, name: Room of thoqb123456
+2026-02-23 08:47:14.680 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:47:21.917 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:47:27.291 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:47:28.369 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:47:41.586 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:47:42.513 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:47:43.177 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:47:55.275 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:47:56.121 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:47:56.759 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:48:09.718 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:48:11.163 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 08:48:11.807 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 09:06:05.661 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 09:06:28.558 | INFO     | src.app.games.deception.logic:handle_event:338 - Host 2cc841d7-300b-4cc8-942e-5bcdb0a3ce3f left room 794a4455-e551-446d-9ece-97c2f7e7125b. Purging room.
+2026-02-23 09:06:28.952 | INFO     | src.app.games.deception.logic:close_game:548 - Game room 794a4455-e551-446d-9ece-97c2f7e7125b has been fully closed and purged.
+2026-02-23 09:48:14.336 | INFO     | src.app.core.scheduler:cleanup_inactive_rooms:24 - Scavenger: Removing stale room 794a4455-e551-446d-9ece-97c2f7e7125b
+2026-02-23 14:10:00.722 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 14:10:00.723 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-23 14:10:01.188 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-23 14:13:58.095 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 14:22:22.941 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-23 14:22:22.942 | ERROR    | src.app.core.auth:get_current_user:140 - JWT Decode error: Signature has expired.
+2026-02-24 11:49:06.758 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 11:49:06.962 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 11:49:07.341 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 11:49:07.345 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 11:49:54.990 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-24 11:49:54.991 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-24 11:49:56.021 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-24 11:49:56.037 | ERROR    | src.app.core.auth:get_current_user:140 - JWT Decode error: Signature has expired.
+2026-02-24 11:51:49.935 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 11:51:49.936 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 11:51:49.936 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 11:51:52.648 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 11:51:52.861 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 11:51:53.255 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 11:51:53.258 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 11:51:59.809 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 11:51:59.811 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 11:51:59.812 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 11:52:02.906 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 11:52:03.055 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 11:52:03.391 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 11:52:03.394 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 11:53:50.329 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 11:53:50.330 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 11:53:50.330 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 11:53:52.876 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 11:53:53.043 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 11:53:53.410 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 11:53:53.413 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 12:20:40.967 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 12:20:40.969 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 12:20:40.970 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 12:20:43.237 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 12:20:43.366 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 12:20:43.771 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 12:20:43.773 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 12:21:24.015 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 12:21:24.016 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 12:21:24.016 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 12:21:25.734 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 12:21:25.835 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 12:21:26.152 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 12:21:26.154 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 12:29:44.827 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 12:29:44.827 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 12:29:44.828 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 12:29:46.536 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 12:29:46.655 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 12:29:47.063 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 12:29:47.066 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 12:39:34.871 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 12:39:34.872 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 12:39:34.872 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 12:39:36.599 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 12:39:36.764 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 12:39:37.143 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 12:39:37.147 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 12:39:37.254 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 12:39:37.254 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 12:39:37.254 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 12:39:38.930 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 12:39:39.032 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 12:39:39.317 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 12:39:39.319 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 12:41:33.534 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 12:41:33.535 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 12:41:33.536 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 12:41:35.312 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 12:41:35.416 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 12:41:35.794 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 12:41:35.796 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 13:05:15.794 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 13:05:15.795 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 13:05:15.795 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 13:05:17.564 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 13:05:17.672 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 13:05:18.087 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 13:05:18.089 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 14:43:39.942 | DEBUG    | src.app.core.auth:verify_supabase_jwt:76 - JWT Header: {'alg': 'ES256', 'kid': '62367c9f-e5a0-4f8a-badf-5c23f8856070', 'typ': 'JWT'}
+2026-02-24 14:43:39.942 | INFO     | src.app.core.auth:get_jwks:29 - Fetching JWKS from https://xeiezdokmvvsxwtgbiep.supabase.co/auth/v1/.well-known/jwks.json
+2026-02-24 14:43:40.898 | INFO     | src.app.core.auth:get_jwks:38 - Successfully fetched 1 keys from JWKS.
+2026-02-24 14:43:40.905 | ERROR    | src.app.core.auth:get_current_user:140 - JWT Decode error: Signature has expired.
+2026-02-24 14:48:53.018 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 14:48:53.019 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 14:48:53.020 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 14:48:55.300 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 14:48:55.427 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 14:48:55.808 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 14:48:55.810 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 14:53:21.051 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 14:53:21.051 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 14:53:21.051 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 14:53:22.859 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 14:53:22.968 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 14:53:23.326 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 14:53:23.328 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 14:58:39.034 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 14:58:39.035 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 14:58:39.035 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 14:58:40.894 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 14:58:41.000 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 14:58:41.392 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 14:58:41.394 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 15:04:24.925 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 15:04:24.925 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 15:04:24.926 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 15:04:26.983 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 15:04:27.151 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 15:04:27.554 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 15:04:27.557 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 15:04:36.606 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 15:04:36.608 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 15:04:36.608 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 15:04:38.652 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 15:04:38.768 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 15:04:39.083 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 15:04:39.085 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 16:01:36.767 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 16:01:36.767 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 16:01:36.768 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 16:01:39.698 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 16:01:39.860 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 16:01:40.254 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 16:01:40.264 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 16:05:26.742 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 16:05:26.743 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 16:05:26.743 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 16:05:28.447 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 16:05:28.564 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 16:05:28.949 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 16:05:28.957 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 16:05:42.422 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 16:05:42.423 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 16:05:42.423 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 16:05:44.123 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 16:05:44.235 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 16:05:44.549 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 16:05:44.555 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 16:08:16.937 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 16:08:16.938 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 16:08:16.938 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 16:08:18.663 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 16:08:18.782 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 16:08:19.150 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 16:08:19.152 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 16:20:38.615 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 16:20:38.616 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 16:20:38.617 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 16:20:40.324 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 16:20:40.423 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 16:20:40.799 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 16:20:40.801 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 16:27:57.418 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 16:27:57.418 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 16:27:57.418 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 16:27:59.158 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 16:27:59.304 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 16:27:59.670 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 16:27:59.677 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 16:28:08.527 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 16:28:08.528 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 16:28:08.528 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 16:28:10.242 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 16:28:10.345 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 16:28:10.653 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 16:28:10.655 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 16:28:17.424 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 16:28:17.425 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 16:28:17.425 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 16:28:19.214 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 16:28:19.316 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 16:28:19.672 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 16:28:19.674 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.
+2026-02-24 16:28:27.217 | INFO     | src.app.main:lifespan:33 - Backend shutting down...
+2026-02-24 16:28:27.218 | INFO     | src.app.core.redis:close_redis:27 - Redis connection closed.
+2026-02-24 16:28:27.218 | INFO     | src.app.core.scheduler:stop_scheduler:36 - Scheduler stopped.
+2026-02-24 16:28:28.971 | INFO     | src.app.main:lifespan:27 - Backend starting up...
+2026-02-24 16:28:29.074 | INFO     | src.app.core.database:init_supabase:12 - Supabase client initialized successfully.
+2026-02-24 16:28:29.399 | INFO     | src.app.core.redis:init_redis:19 - Connected to Redis at redis-15358.c1.asia-northeast1-1.gce.cloud.redislabs.com:15358
+2026-02-24 16:28:29.401 | INFO     | src.app.core.scheduler:start_scheduler:31 - Scheduler started: Running periodic cleanup tasks.

@@ -14,8 +14,13 @@ class Settings(BaseSettings):
     SUPABASE_URL: Optional[str] = None
     SUPABASE_KEY: Optional[str] = None
     SUPABASE_SERVICE_ROLE_KEY: Optional[str] = None
+    SUPABASE_JWT_SECRET: Optional[str] = None
     ADMIN_EMAIL: Optional[str] = None
     
-    model_config = SettingsConfigDict(env_file=".env", case_sensitive=True)
+    model_config = SettingsConfigDict(
+        env_file=[".env", "../.env"], 
+        case_sensitive=True,
+        extra="ignore"
+    )
 
 settings = Settings()

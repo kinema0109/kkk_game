@@ -16,4 +16,8 @@ def init_supabase():
         logger.warning("Supabase credentials missing. Database features will be limited.")
 
 def get_supabase() -> Client:
+    if supabase is None:
+        from fastapi import HTTPException
+        logger.error("get_supabase called before initialization or initialization failed")
+        raise HTTPException(status_code=500, detail="Supabase client not initialized")
     return supabase

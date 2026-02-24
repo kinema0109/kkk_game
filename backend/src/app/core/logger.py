@@ -14,6 +14,7 @@ def setup_logging():
     )
     
     # Optional: Log to file with rotation for production debugging
-    # logger.add("logs/app.log", rotation="500 MB", retention="10 days", compression="zip", level="INFO")
+    # Log to file for debugging
+    logger.add("logs/app.log", rotation="500 MB", retention="10 days", compression="zip", level="DEBUG")
 
 setup_logging()

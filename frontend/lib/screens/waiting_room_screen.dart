@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../providers/game_provider.dart';
 import '../models/game_models.dart';
 
@@ -10,13 +11,12 @@ class WaitingRoomScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('WAITING ROOM'),
-        backgroundColor: Colors.indigo,
-        foregroundColor: Colors.white,
+        title: const Text('BRIEFING ROOM'),
         actions: [
           IconButton(
             onPressed: () => context.read<GameProvider>().disconnect(),
-            icon: const Icon(Icons.exit_to_app),
+            icon: const Icon(Icons.logout),
+            tooltip: 'ABANDON MISSION',
           ),
         ],
       ),
@@ -33,27 +33,23 @@ class WaitingRoomScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildHeader(game),
-                const SizedBox(height: 32),
-                const Text(
-                  'PLAYERS',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 2),
-                ),
-                const Divider(),
+                _buildRoomInfo(context, game),
+                const SizedBox(height: 40),
+                _buildPlayerCount(context, game),
+                const SizedBox(height: 12),
+                const Divider(color: Colors.white10),
                 Expanded(
                   child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
                     itemCount: game.players.length,
                     itemBuilder: (context, index) {
                       final player = game.players[index];
-                      return _buildPlayerTile(player);
+                      return _buildPlayerTile(context, player, index);
                     },
                   ),
                 ),
-                const SizedBox(height: 16),
-                _buildStartButton(context, game),
+                const SizedBox(height: 24),
+                _buildActionControl(context, game),
               ],
             ),
           );
@@ -62,86 +58,134 @@ class WaitingRoomScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader(GameState game) {
-    return Card(
-      color: Colors.indigo.shade50,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          children: [
-            const Icon(Icons.qr_code, size: 48, color: Colors.indigo),
-            const SizedBox(width: 16),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text('ROOM CODE',
-                    style: TextStyle(color: Colors.grey, fontSize: 12)),
-                Text(
-                  game.roomCode,
-                  style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 2),
+  Widget _buildRoomInfo(BuildContext context, GameState game) {
+    return Container(
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+            color:
+                Theme.of(context).colorScheme.primary.withValues(alpha: 0.2)),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.black.withValues(alpha: 0.3),
+              blurRadius: 10,
+              offset: const Offset(0, 5)),
+        ],
+      ),
+      child: Row(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('SECURE ROOM ACCESS',
+                  style: TextStyle(
+                      color: Colors.white38, fontSize: 10, letterSpacing: 2)),
+              const SizedBox(height: 4),
+              Text(
+                game.roomCode,
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 4,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
-              ],
-            ),
-            const Spacer(),
-            Chip(
-              label: Text(game.status.name),
-              backgroundColor: Colors.indigo,
-              labelStyle: const TextStyle(color: Colors.white),
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          _buildStatusChip(context, game.status),
+        ],
+      ),
+    ).animate().fadeIn().slideX(begin: -0.1);
+  }
+
+  Widget _buildStatusChip(BuildContext context, GameStatus status) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        color: Colors.amber.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
+      ),
+      child: Text(
+        status.name,
+        style: const TextStyle(
+            color: Colors.amber,
+            fontSize: 10,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1),
       ),
     );
   }
 
-  Widget _buildPlayerTile(Player player) {
-    return ListTile(
-      leading: CircleAvatar(
-        backgroundColor: player.isOnline ? Colors.green : Colors.grey,
-        child: Text(player.name[0].toUpperCase()),
-      ),
-      title: Text(
-        player.name,
-        style: TextStyle(
-          fontWeight: player.isHost ? FontWeight.bold : FontWeight.normal,
+  Widget _buildPlayerCount(BuildContext context, GameState game) {
+    return Row(
+      children: [
+        const Text('AGENT LIST',
+            style: TextStyle(
+                fontWeight: FontWeight.bold, letterSpacing: 2, fontSize: 12)),
+        const Spacer(),
+        Text(
+          '${game.players.length} / 12',
+          style: const TextStyle(color: Colors.white38, fontSize: 12),
         ),
-      ),
-      subtitle: Text(player.isOnline ? 'Online' : 'Offline'),
-      trailing: player.isHost
-          ? const Icon(Icons.star, color: Colors.amber)
-          : player.isReady
-              ? const Icon(Icons.check_circle, color: Colors.green)
-              : const Icon(Icons.hourglass_empty),
+      ],
     );
   }
 
-  Widget _buildStartButton(BuildContext context, GameState game) {
-    // Only host can start game
-    // For simplicity in this demo, we check if the first player is the current user.
-    // In a real app, you'd compare current client ID with player IDs.
+  Widget _buildPlayerTile(BuildContext context, Player player, int index) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 8),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.02),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor: player.isOnline
+              ? Colors.green.withValues(alpha: 0.2)
+              : Colors.red.withValues(alpha: 0.2),
+          child: Text(player.name[0].toUpperCase(),
+              style: TextStyle(
+                  color: player.isOnline ? Colors.green : Colors.red)),
+        ),
+        title: Text(player.name,
+            style: const TextStyle(fontWeight: FontWeight.bold)),
+        subtitle: Text(player.isOnline ? 'ACTIVE' : 'DISCONNECTED',
+            style: const TextStyle(fontSize: 10, letterSpacing: 1)),
+        trailing: player.isHost
+            ? const Icon(Icons.star, color: Colors.amber, size: 18)
+            : player.isReady
+                ? const Icon(Icons.check_circle_outline,
+                    color: Colors.green, size: 18)
+                : const Icon(Icons.hourglass_bottom,
+                    color: Colors.white10, size: 18),
+      ),
+    ).animate().fadeIn(delay: (index * 50).ms).slideX(begin: 0.05);
+  }
+
+  Widget _buildActionControl(BuildContext context, GameState game) {
+    final canStart = game.players.length >= 4;
 
     return SizedBox(
       width: double.infinity,
-      height: 60,
+      height: 56,
       child: ElevatedButton(
-        onPressed: game.players.length >= 4
+        onPressed: canStart
             ? () => context.read<GameProvider>().sendAction('start_game', {})
             : null,
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.green,
-          foregroundColor: Colors.white,
-          disabledBackgroundColor: Colors.grey.shade300,
+          backgroundColor: Theme.of(context).colorScheme.secondary,
         ),
         child: Text(
-          game.players.length >= 4
-              ? 'START GAME'
-              : 'NEED ${4 - game.players.length} MORE PLAYERS',
-          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          canStart
+              ? 'COMMENCE OPERATION'
+              : 'WAITING FOR REINFORCEMENTS (${4 - game.players.length})',
+          style: const TextStyle(letterSpacing: 2, fontWeight: FontWeight.bold),
         ),
       ),
-    );
+    ).animate(target: canStart ? 1 : 0).shimmer(duration: 2.seconds);
   }
 }
